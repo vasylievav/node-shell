@@ -2,6 +2,7 @@ const pwd = require('./pwd');
 const ls = require('./ls');
 const cat = require('./cat');
 const curl = require('./curl');
+const date = require('./date');
 
 const done = (output) => {
   process.stdout.write(output);
@@ -22,7 +23,10 @@ process.stdin.on('data', (data ) =>{
     else if (cmd.split(' ')[0]=='curl'){
       curl(done, cmd.split(' ')[1])
     }
-
+    else if (cmd=='date'){
+      date(done);
+    }
+        
   process.stdout.write('\nprompt > ');
 } );
 
