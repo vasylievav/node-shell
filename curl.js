@@ -7,10 +7,10 @@ const request = require('request');
 //   console.log('body:', body); // Print the HTML for the Google homepage.
 // });
 
-module.exports =function curl (link) {
+module.exports = (done, link) => {
   request (link, function(error, response, body) {
-      console.error('error:', error); 
-      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-      console.log('body:', body); // Print the HTML for the Google homepage.
+      done('error:', error);
+      done('statusCode:', response && response.statusCode);
+      done('body:', body);
     })
 }

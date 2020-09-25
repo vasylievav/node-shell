@@ -8,11 +8,11 @@ const fs=require('fs');
 //2. cat
 //3.  get file contents using fs
 
-module.exports = function cat(name){
+module.exports = (done, name) => {
   //get file contents and print to screen
   fs.readFile(`./${name}`, 'utf8', (err, data) => {
     if (err) throw err;
-    console.log(data);
+    done(data);
   });
 
 }
