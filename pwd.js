@@ -1,7 +1,7 @@
 
 
 module.exports = function pwd(){
-  process.stdout.write(process.execPath);
+  process.stdout.write(__dirname);
 }
 
 
