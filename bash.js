@@ -1,7 +1,7 @@
 const pwd = require('./pwd');
 const ls = require('./ls');
 const cat = require('./cat');
-
+const curl = require('./curl');
 
 console.log(typeof process.execPath);
 
@@ -17,8 +17,11 @@ process.stdin.on('data', (data ) =>{
   } else if (cmd.split(' ')[0] == 'cat'){
     cat(cmd.split(' ')[1]);
   }
+    else if (cmd.split(' ')[0]=='curl'){
+      curl(cmd.split(' ')[1])
+    }
 
-  //  pwd()</;
+  
   process.stdout.write('\nprompt > ');
 } );
 
